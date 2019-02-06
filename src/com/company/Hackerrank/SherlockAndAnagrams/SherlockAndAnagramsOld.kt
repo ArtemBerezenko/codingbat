@@ -1,4 +1,4 @@
-package com.company.Hackerrank
+package com.company.Hackerrank.SherlockAndAnagrams
 
 import java.util.*
 import kotlin.collections.*
@@ -94,6 +94,23 @@ fun cutSubstIfContains(substr: String, string: String): String {
     return str.toString()
 }
 
+fun solution(s: String): Int {
+    val map = mutableMapOf<String, Int>()
+    for (i in 0 .. s.length) {
+        for (j in i + 1 .. s.length) {
+            val str = s.substring(i, j).chars()
+            val sortStr = str.sorted().toString()
+            if (map.containsKey(sortStr)) {
+                map[sortStr]?.plus(1)
+            } else map[sortStr] = 1
+        }
+    }
+    var sum = 0
+    for (value in map.values) {
+        sum += (value * (value - 1) / 2)
+    }
+    return sum
+}
 
 fun main(args: Array<String>) {
     val scan = Scanner(System.`in`)
@@ -103,7 +120,7 @@ fun main(args: Array<String>) {
     for (qItr in 1..q) {
         val s = scan.nextLine()
 
-        val result = sherlockAndAnagramsOld(s)
+        val result = solution(s)
 
         println(result)
     }

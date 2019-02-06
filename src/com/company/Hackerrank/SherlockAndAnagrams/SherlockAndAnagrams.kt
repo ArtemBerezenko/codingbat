@@ -1,4 +1,4 @@
-package com.company.Hackerrank
+package com.company.Hackerrank.SherlockAndAnagrams
 
 import java.util.*
 import kotlin.collections.*
