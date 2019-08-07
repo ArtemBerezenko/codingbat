@@ -2,8 +2,7 @@ package com.company.Geeksforgeeks
 
 import java.util.*
 import java.util.stream.Collectors
-
-
+import kotlin.collections.HashMap
 
 
 fun <T> removeDuplicates(list: ArrayList<T>): ArrayList<T> {
