@@ -1,9 +1,9 @@
 package com.company.Hackerrank;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class FindMergePointOfTwoLists {
@@ -72,7 +72,7 @@ public class FindMergePointOfTwoLists {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int tests = scanner.nextInt();
