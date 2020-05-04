@@ -61,7 +61,7 @@ public class LongestCommonPrefix {
     }
 
     public static void main(String[] args) {
-//        System.out.println(longestCommonPrefix(new String[]{""}));
+        System.out.println(longestCommonPrefix(new String[]{""}));
         System.out.println(longestCommonPrefixBinarySearch(new String[]{"flower","flow","flight"}));
     }
 }
