@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//238(Amazon)
+//238(Amazon)https://leetcode.com/problems/product-of-array-except-self/
 public class ProductOfArrayExceptSelf {
     public static int[] productExceptSelfMine(int[] nums) {
         int[] result = new int[nums.length];
