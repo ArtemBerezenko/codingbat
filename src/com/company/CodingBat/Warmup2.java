@@ -1,6 +1,6 @@
 package com.company.CodingBat;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
