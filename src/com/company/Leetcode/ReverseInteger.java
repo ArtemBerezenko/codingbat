@@ -1,9 +1,5 @@
 package com.company.Leetcode;
 
-import scala.Int;
-
-import java.util.ArrayList;
-
 public class ReverseInteger {
 
     public static int reverse1(int x) {
