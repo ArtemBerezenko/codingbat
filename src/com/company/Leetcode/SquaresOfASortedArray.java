@@ -30,6 +30,6 @@ public class SquaresOfASortedArray {
         System.out.println(sortedSquares(new int[]{-5,-3,-2,-1}));
         System.out.println(sortedSquares(new int[]{-10000,-9999,-7,-5,0,0,10000}));
         System.out.println(sortedSquares(new int[]{-3,0,2}));
-          System.out.println(sortedSquares(new int[]{-1,2,2}));
+        System.out.println(sortedSquares(new int[]{-1,2,2}));
     }
 }
