@@ -45,13 +45,13 @@ public class MoveZeroes {
 
 
     public static void main(String[] args) {
-//        int[] ints = {0,1,0,3,12};
-//        moveZeroesSolution(ints);
-//        display(ints);
-//
-//        int[] ints2 = {0,0,1};
-//        moveZeroes(ints2);
-//        display(ints2);
+        int[] ints = {0,1,0,3,12};
+        moveZeroesSolution(ints);
+        display(ints);
+
+        int[] ints2 = {0,0,1};
+        moveZeroes(ints2);
+        display(ints2);
 
         int[] ints1 = {2,1};
         moveZeroesSolution(ints1);
