@@ -11,8 +11,16 @@ public class AddTwoNumbers {
         int val;
         ListNode next;
 
-        ListNode(int x) {
-            val = x;
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
         }
     }
 
@@ -102,16 +110,45 @@ public class AddTwoNumbers {
         return result;
     }
 
+    public static ListNode addTwoNumbersRecursion(ListNode l1, ListNode l2) {
+        ListNode result = new ListNode();
+        result = sum(l1, l2, result.next, 0);
+        return result;
+    }
+
+    private static ListNode sum(ListNode l1, ListNode l2, ListNode result, int acc) {
+        if (l1 == null && l2 == null) {
+            if (acc != 0) {
+                return new ListNode(acc, result);
+            }
+            return result;
+        }
+        if (l2 == null) {
+            int sum = l1.val + acc;
+            acc = sum / 10;
+            result = new ListNode(sum % 10, sum(l1.next, null, result, acc));
+        } else if (l1 == null) {
+            int sum = l2.val + acc;
+            acc = sum / 10;
+            result = new ListNode(sum % 10, sum(null, l2.next, result, acc));
+        } else {
+            int sum = l1.val + l2.val + acc;
+            acc = sum / 10;
+            result = new ListNode(sum % 10, sum(l1.next, l2.next, result, acc));
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-//        node1.next = new ListNode(8);
-//        node1.next.next = new ListNode(3);
+        ListNode node1 = new ListNode(9);
+        node1.next = new ListNode(9);
+        node1.next.next = new ListNode(9);
 
         ListNode node2 = new ListNode(9);
-        node2.next = new ListNode(9);
+//        node2.next = new ListNode(6);
 //        node2.next.next = new ListNode(4);
 
-        ListNode result = addTwoNumbers(node1, node2);
+        ListNode result = addTwoNumbersRecursion(node1, node2);
         ListNode next = result.next;
         while (next != null) {
             next = result.next;
