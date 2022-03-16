@@ -68,6 +68,3 @@ public class FlattenMultilevelDoublyLinkedList {
         System.out.println(result);
     }
 }
-
-
-//1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12
