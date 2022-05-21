@@ -78,15 +78,3 @@ public class CopyListWithRandomPointer {
         }
     }
 }
-
-
-//        7
-//        null
-//        13
-//        7
-//        11
-//        1
-//        10
-//        11
-//        1
-//        7
