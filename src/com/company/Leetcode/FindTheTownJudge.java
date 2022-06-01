@@ -32,8 +32,3 @@ public class FindTheTownJudge {
         System.out.println(findJudge(3, new int[][]{{1, 2}, {2, 3}}));
     }
 }
-
-//4
-//        {{1,3],{1,4],[2,3],[2,4],[4,3]]
-//
-//[[1,2],[2,3]]
