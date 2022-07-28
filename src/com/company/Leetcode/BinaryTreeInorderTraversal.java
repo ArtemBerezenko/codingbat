@@ -2,6 +2,7 @@ package com.company.Leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
 
@@ -37,9 +38,28 @@ public class BinaryTreeInorderTraversal {
         return list;
     }
 
+    private static List<Integer> traversalIterative(TreeNode root) {
+        List<Integer> results = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            TreeNode top = stack.pop();
+            if (top != null) {
+                results.add(top.val);
+                current = top.right;
+            }
+        }
+        return results;
+    }
+
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
-        List<Integer> list = inorderTraversal(treeNode);
+        List<Integer> list = traversalIterative(treeNode);
         System.out.println(list);
     }
 }
