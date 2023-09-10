@@ -13,12 +13,10 @@ public class FizzBuzz {
     }
 
     private static String fizzBuzzz(Integer i) {
-        return switch (i) {
-            case Integer j && j % 3 == 0 && j % 5 == 0 -> "FizzBuzz";
-            case Integer j && j % 3 == 0 -> "Fizz";
-            case Integer j && j % 5 == 0 -> "Buzz";
-            default -> i.toString();
-        };
+        if (i % 3 == 0 && i % 5 == 0) return  "FizzBuzz";
+        if (i % 3 == 0) return "Fizz";
+        if (i % 5 == 0) return "Buzz";
+        return i.toString();
     }
 
     public static void main(String[] args) {
