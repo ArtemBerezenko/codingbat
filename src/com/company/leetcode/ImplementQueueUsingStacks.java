@@ -7,6 +7,7 @@ public class ImplementQueueUsingStacks {
     public static class MyQueue {
         private Stack<Integer> head;
         private Stack<Integer> tail;
+        private int front;
 
         public MyQueue() {
             this.head = new Stack<>();
@@ -14,23 +15,30 @@ public class ImplementQueueUsingStacks {
         }
 
         public void push(int x) {
-            tail = new Stack<>();
-            tail.addAll(head);
-            head = new Stack<>();
+            if (head.isEmpty()) {
+                front = x;
+            }
             head.push(x);
-            head.addAll(tail);
         }
 
         public int pop() {
-            return head.pop();
+            if (tail.isEmpty()) {
+                while (!head.isEmpty()) {
+                    tail.push(head.pop());
+                }
+            }
+            return tail.pop();
         }
 
         public int peek() {
+            if (tail.isEmpty()) {
+                return front;
+            }
             return head.peek();
         }
 
         public boolean empty() {
-            return head.isEmpty();
+            return head.isEmpty() && tail.isEmpty();
         }
     }
 
