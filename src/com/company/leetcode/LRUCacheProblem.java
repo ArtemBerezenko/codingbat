@@ -1,5 +1,8 @@
 package com.company.leetcode;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -119,5 +122,74 @@ public class LRUCacheProblem {
         cache.get(1);
         cache.put(3, 3);
         cache.get(2);
+    }
+
+    @Test
+    public void testCacheCapacity() {
+        LRUCache cache = new LRUCache(2);
+
+        cache.put(1, 1);
+        cache.put(2, 2);
+
+        cache.get(1);
+
+        Assert.assertTrue(cache.get(1) == 1);
+
+        cache.put(3, 3);
+
+        Assert.assertTrue(cache.get(2) == -1);
+    }
+
+    @Test
+    public void testCache2Capacity() {
+        LRUCache2 cache = new LRUCache2(2);
+
+        cache.put(1, 1);
+        cache.put(2, 2);
+
+        cache.get(1);
+
+        Assert.assertTrue(cache.get(1) == 1);
+
+        cache.put(3, 3);
+
+        Assert.assertTrue(cache.get(2) == -1);
+    }
+
+
+    @Test
+    public void testCacheCapacityWhenPut() {
+        LRUCache cache = new LRUCache(2);
+
+        cache.put(1, 1);
+        cache.put(2, 2);
+
+        cache.put(1, 3);
+
+        Assert.assertTrue(cache.get(1) == 3);
+
+        cache.put(3, 3);
+
+        Assert.assertTrue(cache.get(1) == 3);
+        Assert.assertTrue(cache.get(2) == -1);
+
+    }
+
+    @Test
+    public void testCache2CapacityWhenPut() {
+        LRUCache2 cache = new LRUCache2(2);
+
+        cache.put(1, 1);
+        cache.put(2, 2);
+
+        cache.put(1, 3);
+
+        Assert.assertTrue(cache.get(1) == 3);
+
+        cache.put(3, 3);
+
+        Assert.assertTrue(cache.get(1) == 3);
+        Assert.assertTrue(cache.get(2) == -1);
+
     }
 }
