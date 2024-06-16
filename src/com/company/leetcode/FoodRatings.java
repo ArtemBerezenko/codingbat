@@ -1,6 +1,7 @@
 package com.company.leetcode;
 
-import javafx.util.Pair;
+
+import kotlin.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,9 +19,9 @@ class FoodRatings {
 
             cuisineFoodMap
                 .computeIfAbsent(cuisines[i], k -> new TreeSet<>((a, b) -> {
-                    int compareByRating = Integer.compare(a.getKey(), b.getKey());
+                    int compareByRating = Integer.compare(a.component1(), b.component1());
                     if (compareByRating == 0) {
-                        return a.getValue().compareTo(b.getValue());
+                        return a.component2().compareTo(b.component2());
                     }
                     return compareByRating;
                 }))
@@ -41,6 +42,6 @@ class FoodRatings {
 
     public String highestRated(String cuisine) {
         Pair<Integer, String> highestRated = cuisineFoodMap.get(cuisine).first();
-        return highestRated.getValue();
+        return highestRated.component2();
     }
 }

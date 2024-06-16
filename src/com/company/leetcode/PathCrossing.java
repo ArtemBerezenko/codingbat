@@ -1,6 +1,7 @@
 package com.company.leetcode;
 
-import javafx.util.Pair;
+
+import kotlin.Pair;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -24,8 +25,8 @@ public class PathCrossing {
         for (Character c : path.toCharArray()) {
             String s = String.valueOf(c);
             Pair<Integer, Integer> pair = map.get(s);
-            x += pair.getKey();
-            y += pair.getValue();
+            x += pair.component1();
+            y += pair.component2();
             Pair<Integer, Integer> visit = new Pair<>(x, y);
 
             if (visited.contains(visit)) {
