@@ -5,7 +5,7 @@ import kotlin.collections.*
 import kotlin.io.*
 import kotlin.ranges.*
 import kotlin.text.*
->import kotlin.collections.ArrayList
+import kotlin.collections.ArrayList
 
 // Complete the sherlockAndAnagrams function below.
 fun sherlockAndAnagramsOld(s: String): Int {
