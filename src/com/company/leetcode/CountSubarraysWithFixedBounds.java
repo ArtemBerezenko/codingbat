@@ -27,6 +27,6 @@ public class CountSubarraysWithFixedBounds {
     }
 
     public static void main(String[] args) {
-        System.out.println(countSubarrays(new int[] {1,3,5,2,7,5}, 1, 5));
+        System.out.println(countSubarrays(new int[] {1,3,5,2,7,5,1,3,5}, 1, 5));
     }
 }
