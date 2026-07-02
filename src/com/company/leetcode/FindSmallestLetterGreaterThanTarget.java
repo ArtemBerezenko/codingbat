@@ -38,8 +38,28 @@ public class FindSmallestLetterGreaterThanTarget {
         return letters[low % letters.length];
     }
 
+    public static char nextGreatestLetter2(char[] letters, char target) {
+        int l = 0;
+        int r = letters.length;
+        int goal = Character.getNumericValue(target);
+        char min = letters[0];
+
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            int current = Character.getNumericValue(letters[mid]);
+            if (current <= goal) {
+                l = mid + 1;
+            } else {
+                min = letters[mid];
+                r = mid;
+            }
+        }
+        return min;
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(nextGreatestLetter(new char[]{'c','f','j'}, 'd'));
+        System.out.println(nextGreatestLetter2(new char[]{'c','f','j'}, 'd'));
     }
 
 }

@@ -25,6 +25,31 @@ public class CountNegativeNumbersInSortedMatrix {
         return count;
     }
 
+    public static int countNegatives2(int[][] grid) {
+        int sum = 0;
+        for (int[] array : grid) {
+            sum += (array.length - bs(array));
+        }
+
+        return sum;
+    }
+
+    private static int bs(int[] array) {
+        int l = 0;
+        int r = array.length - 1;
+
+        while (l <= r) {
+            int mid = (r + l) / 2;
+
+            if (array[mid] >= 0) {
+               l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return l;
+    }
+
     public static void main(String[] args) {
 //        System.out.println(countNegatives(new int[][]{
 //                {4, 3, 2, -1},
@@ -33,7 +58,7 @@ public class CountNegativeNumbersInSortedMatrix {
 //                {-1, -1, -2, -3}
 //        }));
 
-        System.out.println(countNegatives(new int[][]{
+        System.out.println(countNegatives2(new int[][]{
                 {3,2},
                 {-3,-3},
                 {-3,-3},
