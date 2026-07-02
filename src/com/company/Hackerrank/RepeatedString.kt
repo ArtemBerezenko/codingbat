@@ -5,6 +5,8 @@ import java.math.*
 import java.security.*
 import java.text.*
 import java.util.*
+import java.util.Locale
+import java.util.Locale.getDefault
 import java.util.concurrent.*
 import java.util.function.*
 import java.util.regex.*
@@ -30,7 +32,7 @@ fun repeatedString1(s: String, n: Long): Long {
             j = 0
             equalizer += s.length
         }
-        if (s.substring(i - equalizer, i - equalizer + 1).toLowerCase() == "a") {
+        if (s.substring(i - equalizer, i - equalizer + 1).lowercase(getDefault()) == "a") {
             count++
         }
         j++
@@ -42,7 +44,7 @@ fun repeatedString1(s: String, n: Long): Long {
 fun repeatedString(s: String, n: Long): Long {
     var count = 0L
     for (i in 0 until s.length) {
-        if (s.substring(i, i + 1).toLowerCase() == "a") {
+        if (s.substring(i, i + 1).lowercase(getDefault()) == "a") {
             count++
         }
     }
@@ -50,7 +52,7 @@ fun repeatedString(s: String, n: Long): Long {
     count *= num
     val remainder = (n % s.length).toInt()
     for (i in 0 until remainder) {
-        if (s.substring(i, i + 1).toLowerCase() == "a") {
+        if (s.substring(i, i + 1).lowercase(getDefault()) == "a") {
             count++
         }
     }
