@@ -1,12 +1,8 @@
 package com.company.leetcode;
 
-
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toSet;
 
 public class CountServersThatCommunicate {
     public static int countServers(int[][] grid) {
